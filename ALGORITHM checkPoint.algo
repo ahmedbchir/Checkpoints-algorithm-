@@ -1,0 +1,35 @@
+ALGORITHM checkPoint;
+VAR sentense, word : STRING;
+    ch : CHAR;
+    nbWord , nbCh , nbVowles, i : INTEGER;
+    tabVowles : ARRAY_OF CHAR[6];
+BEGIN
+    nbVowles:=0;
+    nbWord:=0;
+    REPEAT
+    writeln('saisir une phrase : ');
+    read(sentense);
+    nbCh:= length(sentense);
+    UNTIL (sentense[nbCh]='.')
+
+    writeln("The number of characters in sentense equal : ", nbCh);
+    
+    FOR i FROM 1 TO nbCh STEP step  DO
+        IF (sentense[i]=' ' || sentense[i]=','|| sentense[i]='.') THEN
+        nbWord := nbWord+1;
+    END_IF
+    END_FOR
+    writeln("The number of words in sentense equal : ", nbWord);
+
+    tabVowles:=['A','a','E','e','I','i','O','o','U','u','Y','y'];
+    FOR i FROM 1 TO nbCh STEP step  DO
+        FOR j FROM 0 TO length(tabVowles)-1 STEP step  DO
+            IF (sentence[i]=tabVowles[j]) THEN
+                nbVowles := nbVowles+1;
+            END_IF
+        END_FOR
+    END_FOR
+    writeln("The number of vowles in sentense equal : ", nbVowles);
+
+    
+END.
